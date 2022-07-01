@@ -26,7 +26,7 @@ test:
 	go test ./...
 
 release:
-	git tag -a $(VERSION) -m "Release" || true
+	git tag -a -s $(VERSION) -m "Release" || true
 	git push origin $(VERSION)
 	goreleaser --rm-dist
 
