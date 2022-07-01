@@ -1,0 +1,38 @@
+release:
+  prerelease: auto
+  draft: false
+project_name: certview
+checksum:
+  # https://goreleaser.com/customization/checksum/
+  name_template: 'checksums.txt'
+source:
+  # https://goreleaser.com/customization/source/
+  enabled: true
+
+snapshot:
+  name_template: '{{ incpatch .Version }}-devel'
+
+before:
+  # Templates for the commands to be ran.
+  hooks:
+    - make clean
+    - go fmt .
+    - go mod tidy
+    - make test
+builds:
+  - env: [CGO_ENABLED=0]
+    goos:
+      - linux
+      - windows
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+      - arm
+    main: ./certview.go
+    id: all
+    goarm:
+      - "6"
+      - "7"
+    goamd64:
+      - v4
