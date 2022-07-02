@@ -34,5 +34,3 @@ builds:
     goarm:
       - "6"
       - "7"
-    goamd64:
-      - v4
