@@ -140,7 +140,7 @@ Certificate Information
             "fingerprint":"\"F4D8517CBD9F9A8AE32B30920C9"
 ```
 
-**View local, output as json**
+**View local, output as yaml**
 ```bash
 ./createview -output yaml twitter.pem
 ```
