@@ -72,15 +72,75 @@ Certificate Information
          sha-256: 5BF3D7E0E6927F773D5106C822C53F6F52C199F7EB1B3B8154B41F2924391C75
 ```
 
-**View Remote, output as json**
+**View Multiple Remotes, output as json**
 ```bash
-./certview -remote -output json google.com:443
+./certview -remote -output json www.apple.com:443 facebook.com:443
 ```
 ```json
-[{"commonName":"*.peg.a2z.com","altNames":["amazon.co.uk","uedata.amazon.co.uk","www.amazon.co.uk","origin-www.amazon.co.uk","*.peg.a2z.com","amazon.com","amzn.com","uedata.amazon.com","us.amazon.com","www.amazon.com","www.amzn.com","corporate.amazon.com","buybox.amazon.com","iphone.amazon.com","yp.amazon.com","home.amazon.com","origin-www.amazon.com","origin2-www.amazon.com","buckeye-retail-website.amazon.com","huddles.amazon.com","amazon.de","www.amazon.de","origin-www.amazon.de","amazon.co.jp","amazon.jp","www.amazon.jp","www.amazon.co.jp","origin-www.amazon.co.jp","*.aa.peg.a2z.com","*.ab.peg.a2z.com","*.ac.peg.a2z.com","origin-www.amazon.com.au","www.amazon.com.au","*.bz.peg.a2z.com","amazon.com.au","origin2-www.amazon.co.jp"],"notBefore":"2021-10-06T00:00:00Z","notAfter":"2022-09-19T23:59:59Z","keyUsages":["Digital Signature","Key Encipherment"],"extKeyUsages":["TLS Web Server Authentication","TLS Web Client Authentication"],"serialNumber":"E4239AB85E2E6A27C52C6DE9B9078D9","issuer":"CN=DigiCert Global CA G2,O=DigiCert Inc,C=US","fingerprints":[{"hash":"sha1","fingerprint":"08040755C8B6852A5DB945A2B380571111DEFD2D"},{"hash":"sha-256","fingerprint":"5BF3D7E0E6927F773D5106C822C53F6F52C199F7EB1B3B8154B41F2924391C75"}]}]
+[
+   {
+      "commonName":"www.apple.com",
+      "altNames":[
+         "www.apple.com.cn",
+         "www.apple.com",
+         "images.apple.com"
+      ],
+      "notBefore":"2022-04-19T15:50:00Z",
+      "notAfter":"2023-05-19T15:49:59Z",
+      "keyUsages":[
+         "Digital Signature",
+         "Key Encipherment"
+      ],
+      "extKeyUsages":[
+         "TLS Web Client Authentication",
+         "TLS Web Server Authentication"
+      ],
+      "serialNumber":"B1C9AEACA963BA767CF0E174793B453",
+      "issuer":"CN=Apple Public EV Server RSA CA 2 - G1,O=Apple Inc.,C=US",
+      "fingerprints":[
+         {
+            "hash":"sha1",
+            "fingerprint":"7BB1944F565D7D64A1455C91E5BA0CEAD9FB9150"
+         },
+         {
+            "hash":"sha-256",
+            "fingerprint":"011B158BABFC7C6A1F525822F1DEF13FE905AA506BB1600BEA5BA86A13ED06CA"
+         }
+      ]
+   },
+   {
+      "commonName":"*.facebook.com",
+      "altNames":[
+         "*.facebook.com",
+         "*.facebook.net",
+         "*.fbcdn.net",
+         "*.fbsbx.com",
+         "*.m.facebook.com",
+         "*.messenger.com",
+         "*.xx.fbcdn.net",
+         "*.xy.fbcdn.net",
+         "*.xz.fbcdn.net",
+         "facebook.com",
+         "messenger.com"
+      ],
+      "notBefore":"2022-04-10T00:00:00Z",
+      "notAfter":"2022-07-09T23:59:59Z",
+      "keyUsages":[
+         "Digital Signature"
+      ],
+      "extKeyUsages":[
+         "TLS Web Server Authentication",
+         "TLS Web Client Authentication"
+      ],
+      "serialNumber":"983ECB02EBF097EDDBD1DEACF50D5D6",
+      "issuer":"CN=DigiCert SHA2 High Assurance Server CA,OU=www.digicert.com,O=DigiCert Inc,C=US",
+      "fingerprints":[
+         {
+            "hash":"sha1",
+            "fingerprint":"\"F4D8517CBD9F9A8AE32B30920C9"
 ```
 
-**View local, output as Yaml**
+**View local, output as json**
 ```bash
 ./createview -output yaml twitter.pem
 ```
